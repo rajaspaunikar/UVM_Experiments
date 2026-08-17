@@ -47,7 +47,7 @@ int main()
     // cudaDevSmResourceSplit(&actual_split_result[0], 2, &initial_SM_resources, &remaining_partition, 0, &group_params_use_case[0]);
 
     // STEP 3: Create a resource descriptor combining, if needed, different resources
-    int groupID = 0;
+    int groupID = 1;
     cudaDevResourceDesc_t resource_desc1;
     cudaDevResourceGenerateDesc(&resource_desc1, &actual_split_result[groupID], 1);
 
@@ -66,7 +66,7 @@ int main()
     cudaEventCreate(&stop1);
 
     // long long N = std::stoi(argv[1])*1024LL*1024LL;
-    long long N = 1024*4*1024LL*1024LL;
+    long long N = 128*20*1024LL*1024LL;
     int *data;
 
     std::cout << "Allocating " << (N * sizeof(int)) / (1024 * 1024) << " MB of Unified Memory..." << std::endl;

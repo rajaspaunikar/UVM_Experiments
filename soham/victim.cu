@@ -61,7 +61,7 @@ int main()
     cudaEventCreate(&stop1);
 
     // long long N = 16LL * 1024LL * 1024LL;
-    long long N = 768LL * 1024LL * 1024LL;
+    long long N = 128 * 20 * 1024LL * 1024LL;
     int *data;
     std::cout << "Allocating " << (N * sizeof(int)) / (1024 * 1024) << " MB of Unified Memory..." << std::endl;
     cudaMallocManaged(&data, N * sizeof(int));
